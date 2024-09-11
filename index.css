@@ -1,0 +1,144 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #f4f4f4; /* Default background color (day mode) */
+    color: #333; /* Default text color (day mode) */
+    background-image: url('https://www.example.com/dragon-background-day.jpg'); /* Dragon background image (day mode) */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.night-mode {
+    background-color: #2e2e2e; /* Night mode background color */
+    color: #e0e0e0; /* Night mode text color */
+    background-image: url('https://www.example.com/dragon-background-night.jpg'); /* Dragon background image (night mode) */
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #fff; /* Default table background color (day mode) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    transition: background-color 0.3s;
+}
+
+.night-mode table {
+    background-color: #424242; /* Night mode table background color */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    border-bottom: 3px solid #ddd;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.night-mode th {
+    background-color: #616161; /* Night mode header background color */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.night-mode tr:nth-child(even) {
+    background-color: #555; /* Night mode even row background color */
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.night-mode tr:hover {
+    background-color: #666; /* Night mode hover color */
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+.night-mode td {
+    border-bottom: 1px solid #666; /* Night mode table border color */
+}
+
+caption {
+    font-size: 1.6em;
+    margin: 15px;
+    font-weight: 700;
+    color: #333;
+}
+
+.night-mode caption {
+    color: #e0e0e0; /* Night mode caption color */
+}
+
+.highlight {
+    animation: highlight 1s;
+    font-weight: bold;
+}
+
+@keyframes highlight {
+    from {
+        background-color: #ffeb3b;
+        color: #000;
+        transform: scale(1.05);
+    }
+    to {
+        background-color: inherit;
+        color: inherit;
+        transform: scale(1);
+    }
+}
+
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.toggle-button.night-mode {
+    background-color: #666; /* Night mode button background color */
+}
+
+.toggle-button.night-mode:hover {
+    background-color: #555; /* Night mode button hover color */
+}

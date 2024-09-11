@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using InnerHTML</title>
+    <link rel="stylesheet" href="index.css" />
+
+</head>
+<body>
+    <button class="toggle-button" onclick="toggleNightMode()">Toggle Night Mode</button>
+    <table>
+        <caption>Subject Grades</caption>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Appdev</td>
+                <td id="grade1">90</td>
+            </tr>
+            <tr>
+                <td>Opsyst</td>
+                <td id="grade2">92</td>
+            </tr>
+            <tr>
+                <td>Mobcom</td>
+                <td id="grade3">93</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td id="average">Average</td>
+            </tr>
+            <tr>
+                <td>Remarks</td>
+                <td id="result"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="index.js"></script>
+    <script>
+        
+
+        var grade1 = parseFloat(document.getElementById("grade1").innerHTML);
+        var grade2 = parseFloat(document.getElementById("grade2").innerHTML);
+        var grade3 = parseFloat(document.getElementById("grade3").innerHTML);
+        
+        var average = (grade1 + grade2 + grade3) / 3;
+
+        document.getElementById("average").innerHTML = average.toFixed(2);
+
+        console.log(average);
+
+
+        var result
+        if(average >= 65 && average <=74){
+            result = "Poor";
+        }else if(average >= 75 && average <=80){
+            result = "Fair";
+        }else if(average >= 81 && average <=89){
+            result = "Good";
+        }else{
+            result ="Excellent";
+        }
+
+        document.getElementById("result").innerHTML = result;
+            
+        
+    </script>
+</body>
+</html>
